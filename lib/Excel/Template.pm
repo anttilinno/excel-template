@@ -14,14 +14,16 @@ use File::Basename;
 use XML::Parser;
 use IO::Scalar;
 
-use constant RENDER_NML => 'normal';
-use constant RENDER_BIG => 'big';
-use constant RENDER_XML => 'xml';
+use constant RENDER_XLSX => 'modern';
+use constant RENDER_NML  => 'normal';
+use constant RENDER_BIG  => 'big';
+use constant RENDER_XML  => 'xml';
 
 my %renderers = (
-    RENDER_NML, 'Spreadsheet::WriteExcel',
-    RENDER_BIG, 'Spreadsheet::WriteExcel::Big',
-    RENDER_XML, 'Spreadsheet::WriteExcelXML',
+    RENDER_XLSX, 'Excel::Writer::XLSX',
+    RENDER_NML,  'Spreadsheet::WriteExcel',
+    RENDER_BIG,  'Spreadsheet::WriteExcel::Big',
+    RENDER_XML,  'Spreadsheet::WriteExcelXML',
 );
 
 sub new
@@ -35,7 +37,7 @@ sub new
     $self->parse_xml($self->{FILE})
         if defined $self->{FILE};
 
-    my @renderer_classes = ( 'Spreadsheet::WriteExcel' );
+    my @renderer_classes = ( 'Excel::Writer::XLSX' );
 
     if (exists $self->{RENDERER} && $self->{RENDERER})
     {

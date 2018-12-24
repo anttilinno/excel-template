@@ -1,5 +1,8 @@
 Revision history for Perl distribution Excel::Template
 
+0.35 Mon Dec 24 21:42:00 2018
+    Bump version for using with the cpanfile as the original is no longer maintained
+
 0.34 Sun Apr 29 21:21:38 CEST 2012
     Behavior of merge_range adjusted, now it works: 
       <merge_range> Content </ merge_range>. (As described in the POD)

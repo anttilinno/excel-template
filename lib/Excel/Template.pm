@@ -6,7 +6,7 @@ BEGIN {
     use Excel::Template::Base;
     use vars qw ($VERSION @ISA);
 
-    $VERSION  = '0.34';
+    $VERSION  = '0.35';
     @ISA      = qw( Excel::Template::Base );
 }
 
